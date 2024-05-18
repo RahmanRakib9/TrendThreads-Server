@@ -1,7 +1,7 @@
 export type TFlashSale = {
-    id?: string,
-    img: string,
-    title:string,
-    price: number,
-    tag?: "new" | "old"
-}
+  id?: string;
+  img: string;
+  title: string;
+  price: number;
+  tag?: 'new' | 'old';
+};

@@ -1,23 +1,26 @@
-import mongoose, { model } from "mongoose";
-import { TFlashSale } from "../interfaces/flash-sale.interface";
+import mongoose, { model } from 'mongoose';
+import { TFlashSale } from '../interfaces/flash-sale.interface';
 
-const flashSaleSchema = new mongoose.Schema<TFlashSale>({
+const flashSaleSchema = new mongoose.Schema<TFlashSale>(
+  {
     id: {
-        type: String
+      type: String,
     },
     img: {
-        type: String
+      type: String,
     },
     title: {
-        type: String
+      type: String,
     },
     price: {
-        type: Number
+      type: Number,
     },
     tag: {
-        type: String,
-        enum: ["new", "old"]
-    }
-}, { timestamps: true })
+      type: String,
+      enum: ['new', 'old'],
+    },
+  },
+  { timestamps: true },
+);
 
-export const FlashSale = model<TFlashSale>("flashSales", flashSaleSchema);
+export const FlashSale = model<TFlashSale>('flashSales', flashSaleSchema);

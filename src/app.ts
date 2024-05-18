@@ -10,6 +10,6 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 // Flash Sale Route
-app.use("/api/v1", flashSaleRoute)
+app.use('/api/v1', flashSaleRoute);
 
 export default app;
