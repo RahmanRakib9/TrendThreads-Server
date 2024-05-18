@@ -13,7 +13,13 @@ const createNewCategory = async (
   return newFlashSale;
 };
 
+const getCategories = async () => {
+  const newCategory = await Category.find();
+  return newCategory;
+};
+
 const categoryServices = {
   createNewCategory,
+  getCategories,
 };
 export default categoryServices;

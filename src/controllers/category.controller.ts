@@ -23,7 +23,25 @@ async function handleCreateCateroty(
   }
 }
 
+async function handleGetCategories(
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) {
+  try {
+    const category = await categoryServices.getCategories();
+
+    res.status(201).json({
+      message: 'All Category Retrieved Successfully!',
+      payload: [category],
+    });
+  } catch (error) {
+    next(error);
+  }
+}
+
 const categoryControllers = {
   handleCreateCateroty,
+  handleGetCategories,
 };
 export default categoryControllers;
