@@ -36,8 +36,27 @@ async function handleGetProducts(
   }
 }
 
+async function handleGetProduct(
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) {
+  try {
+    const id = req.params.id;
+    const product = await productServices.getProduct(id);
+
+    res.status(200).json({
+      message: 'Single Product Retrieved Successfully!',
+      payload: [product],
+    });
+  } catch (error) {
+    next(error);
+  }
+}
+
 const productControllers = {
   handleCreateProduct,
   handleGetProducts,
+  handleGetProduct,
 };
 export default productControllers;

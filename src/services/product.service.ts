@@ -14,8 +14,14 @@ const getProducts = async () => {
   return products;
 };
 
+const getProduct = async (id: string) => {
+  const product = await Product.findById(id);
+  return product;
+};
+
 const productServices = {
   createNewProduct,
   getProducts,
+  getProduct,
 };
 export default productServices;
