@@ -18,8 +18,14 @@ const getCategories = async () => {
   return newCategory;
 };
 
+const getCategory = async (id: string) => {
+  const category = await Category.findById(id);
+  return category;
+};
+
 const categoryServices = {
   createNewCategory,
   getCategories,
+  getCategory,
 };
 export default categoryServices;

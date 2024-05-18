@@ -29,10 +29,28 @@ async function handleGetCategories(
   next: NextFunction,
 ) {
   try {
-    const category = await categoryServices.getCategories();
+    const categories = await categoryServices.getCategories();
 
-    res.status(201).json({
+    res.status(200).json({
       message: 'All Category Retrieved Successfully!',
+      payload: [categories],
+    });
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function handleGetCategory(
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) {
+  try {
+    const id = req.params.id;
+    const category = await categoryServices.getCategory(id);
+
+    res.status(200).json({
+      message: 'Single Category Retrieved Successfully!',
       payload: [category],
     });
   } catch (error) {
@@ -43,5 +61,6 @@ async function handleGetCategories(
 const categoryControllers = {
   handleCreateCateroty,
   handleGetCategories,
+  handleGetCategory,
 };
 export default categoryControllers;
