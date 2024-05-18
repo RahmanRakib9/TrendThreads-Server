@@ -5,5 +5,7 @@ const router = express.Router();
 
 router.post('/flash-sales', flashSaleControllers.handleCreateFlashSale);
 
+router.get('/flash-sales', flashSaleControllers.handleGetFlashSales);
+
 const flashSaleRoute = router;
 export default flashSaleRoute;

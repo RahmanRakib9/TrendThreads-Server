@@ -23,7 +23,25 @@ async function handleCreateFlashSale(
   }
 }
 
+async function handleGetFlashSales(
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) {
+  try {
+    const flashSales = await flashSaleServices.getFlashSales();
+
+    res.status(200).json({
+      message: 'All Flash Sales Retrieved Successfully!',
+      payload: [flashSales],
+    });
+  } catch (error) {
+    next(error);
+  }
+}
+
 const flashSaleControllers = {
   handleCreateFlashSale,
+  handleGetFlashSales,
 };
 export default flashSaleControllers;

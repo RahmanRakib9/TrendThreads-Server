@@ -13,7 +13,13 @@ const createNewFlashSale = async (
   return newFlashSale;
 };
 
+const getFlashSales = async () => {
+  const getFlashSales = await FlashSale.find();
+  return getFlashSales;
+};
+
 const flashSaleServices = {
   createNewFlashSale,
+  getFlashSales,
 };
 export default flashSaleServices;
