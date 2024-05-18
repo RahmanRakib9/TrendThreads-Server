@@ -19,7 +19,25 @@ async function handleCreateProduct(
   }
 }
 
+async function handleGetProducts(
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) {
+  try {
+    const products = await productServices.getProducts();
+
+    res.status(200).json({
+      message: 'All Products Retrieved Successfully!',
+      payload: [products],
+    });
+  } catch (error) {
+    next(error);
+  }
+}
+
 const productControllers = {
   handleCreateProduct,
+  handleGetProducts,
 };
 export default productControllers;

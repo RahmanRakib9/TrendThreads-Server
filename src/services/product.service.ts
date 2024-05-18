@@ -9,7 +9,13 @@ const createNewProduct = async (title: string, img: string, price: number) => {
   return newProduct;
 };
 
+const getProducts = async () => {
+  const products = await Product.find();
+  return products;
+};
+
 const productServices = {
   createNewProduct,
+  getProducts,
 };
 export default productServices;
