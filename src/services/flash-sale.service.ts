@@ -18,8 +18,14 @@ const getFlashSales = async () => {
   return getFlashSales;
 };
 
+const getFlashSale = async (id: string) => {
+  const getFlashSales = await FlashSale.findById(id);
+  return getFlashSales;
+};
+
 const flashSaleServices = {
   createNewFlashSale,
   getFlashSales,
+  getFlashSale,
 };
 export default flashSaleServices;

@@ -39,9 +39,27 @@ async function handleGetFlashSales(
     next(error);
   }
 }
+async function handleGetFlashSale(
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) {
+  try {
+    const id = req.params.id;
+    const flashSale = await flashSaleServices.getFlashSale(id);
+
+    res.status(200).json({
+      message: 'Flash Sale Retrieved Successfully!',
+      payload: [flashSale],
+    });
+  } catch (error) {
+    next(error);
+  }
+}
 
 const flashSaleControllers = {
   handleCreateFlashSale,
   handleGetFlashSales,
+  handleGetFlashSale,
 };
 export default flashSaleControllers;
