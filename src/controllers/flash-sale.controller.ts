@@ -16,7 +16,7 @@ async function handleCreateFlashSale(
 
     res.status(201).json({
       message: 'Flash Sale Created Successfully!',
-      payload: [flashSale],
+      payload: flashSale,
     });
   } catch (error) {
     next(error);
@@ -33,7 +33,7 @@ async function handleGetFlashSales(
 
     res.status(200).json({
       message: 'All Flash Sales Retrieved Successfully!',
-      payload: [flashSales],
+      payload: flashSales,
     });
   } catch (error) {
     next(error);
@@ -50,7 +50,7 @@ async function handleGetFlashSale(
 
     res.status(200).json({
       message: 'Flash Sale Retrieved Successfully!',
-      payload: [flashSale],
+      payload: flashSale,
     });
   } catch (error) {
     next(error);

@@ -12,7 +12,7 @@ async function handleCreateProduct(
 
     res.status(201).json({
       message: 'Product Created Successfully!',
-      payload: [product],
+      payload: product,
     });
   } catch (error) {
     next(error);
@@ -29,7 +29,7 @@ async function handleGetProducts(
 
     res.status(200).json({
       message: 'All Products Retrieved Successfully!',
-      payload: [products],
+      payload: products,
     });
   } catch (error) {
     next(error);
@@ -47,7 +47,7 @@ async function handleGetProduct(
 
     res.status(200).json({
       message: 'Single Product Retrieved Successfully!',
-      payload: [product],
+      payload: product,
     });
   } catch (error) {
     next(error);

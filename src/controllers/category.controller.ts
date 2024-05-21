@@ -16,7 +16,7 @@ async function handleCreateCateroty(
 
     res.status(201).json({
       message: 'New Category Created Successfully!',
-      payload: [result],
+      payload: result,
     });
   } catch (error) {
     next(error);
@@ -33,7 +33,7 @@ async function handleGetCategories(
 
     res.status(200).json({
       message: 'All Category Retrieved Successfully!',
-      payload: [categories],
+      payload: categories,
     });
   } catch (error) {
     next(error);
@@ -51,7 +51,7 @@ async function handleGetCategory(
 
     res.status(200).json({
       message: 'Single Category Retrieved Successfully!',
-      payload: [category],
+      payload: category,
     });
   } catch (error) {
     next(error);
