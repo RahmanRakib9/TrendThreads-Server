@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Hello From Node Typescript Clean Template Application!');
+  res.send('Hello From Updated Root URL!');
 });
 
 // Flash Sale Route
